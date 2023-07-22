@@ -1,0 +1,19 @@
+.container{
+    position: absolute;
+    z-index: var(--closest);
+    inset: 0;
+    margin: auto;
+    display: flex;
+    gap: 221px;
+    justify-content: center;
+    align-items: center;
+}
+
+.content{
+    width: 381px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+

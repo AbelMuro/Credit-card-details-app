@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'space grotesk';
+    src: url('./Common/Fonts/SpaceGrotesk-VariableFont_wght.ttf');
+}
+
+:root{
+    --font: 'space grotesk';
+    --closest: 100;
+    --close: 75;
+    --far: 50;
+    --farthest: 25;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    box-sizing: border-box;
+    transition: all 0.2s linear;
+}
+
+
+body{
+    min-height: 100vh;
+    overflow: hidden;
+}

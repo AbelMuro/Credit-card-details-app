@@ -1,0 +1,25 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 381px;
+    gap: 26px;
+}
+
+.confirm{
+    width: 381px;
+    height: 53px;
+    background-color: #21092F;
+    color: #FFF;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: var(--font);
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.confirm:hover{
+    background-color: rgba(33, 9, 47, 0.6);
+}

@@ -1,0 +1,82 @@
+.container{
+    width: 483px;
+    height: 100vh;
+    background-color: #21092F;
+    position: absolute;
+    z-index: var(--farrthest);
+    top: 0px;
+    left: 0px;
+}
+
+.oval:nth-of-type(1){
+    position: absolute;
+    z-index: var(--farthest);    
+    width: 248px;
+    height: 657px;
+    border-radius: 657px;
+    opacity: 0.2474048376083374;
+    background: #D53AFF;
+    filter: blur(67.95704650878906px);
+    transform: rotate(45deg);
+    top: -160px;
+    left: -120px;
+}
+
+.oval:nth-of-type(2){
+    position: absolute;
+    z-index: var(--far);    
+    top: 0px;
+    width: 248px;
+    height: 657px;
+    border-radius: 657px;
+    opacity: 0.2474048376083374;
+    background: #FF834A;
+    filter: blur(67.95704650878906px);
+    transform: rotate(45deg);
+}
+
+.oval:nth-of-type(3){
+    position: absolute;
+    z-index: var(--close);
+    top: 120px;
+    transform: rotate(45deg);
+    width: 248px;
+    height: 657px;
+    border-radius: 657px;
+    opacity: 0.2474048376083374;
+    background-color: #47A2FF;
+    filter: blur(67.95704650878906px);
+}
+
+.creditCard{
+    width: 447px;
+    height: 245px;    
+    position: absolute;
+    z-index: var(--closest);
+    top: 128px;
+    right: -60px;
+    padding: 28px 32px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background-image: url('./images/bg-card-front.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.creditCard_number{
+    color: #FFF;
+    font-family: var(--font);
+    font-size: 1.75rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 3.422px;
+}
+
+.brand{
+    height: 47px;
+    object-fit: contain;
+}
