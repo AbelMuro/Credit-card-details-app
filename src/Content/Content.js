@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './styles.module.css';
 import Form from './Form'
 
-function Content() {
+function WhiteBackground() {
     return(
         <div className={styles.container}>
             <Form/>
@@ -10,4 +10,4 @@ function Content() {
     )
 }
 
-export default Content;
+export default WhiteBackground;

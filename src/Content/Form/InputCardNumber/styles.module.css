@@ -44,3 +44,14 @@
 .input:hover{
     border: 1px solid #21092F
 }
+
+.errorMessage{
+    display: none;
+    color: #FF5050;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: var(--font);
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
