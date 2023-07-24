@@ -109,6 +109,7 @@
     transform: rotate(0deg);
     width: 447px;
     height: 245px;
+    border-radius: 10px;
     position: absolute;
     top: 420px;
     right: -200px;
@@ -141,8 +142,9 @@
 
 @media(max-width: 1120px){
     .creditCardFront, .creditCardBack{
-        width: 285px;
-        height: 156.2px;
+        width: 295px;
+        height: 176.20805px;
+        border-radius: 6px;
     }
 
     .creditCardFront{
@@ -159,9 +161,11 @@
 
     .cardNumber{
         font-size: 1.125rem;
+        white-space: nowrap;;
     }
     .cardOwner, .cardCVC{
         font-size: 0.5625rem;
+        white-space: nowrap;
     }
 
 }
