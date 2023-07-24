@@ -6,7 +6,8 @@ function InputExpDate() {
     const [year, setYear] = useState('');
     const emptyMessageRef = useRef();
     const invalidMessageRef = useRef();
-    const inputRef = useRef();
+    const inputYearRef = useRef();
+    const inputMonthRef = useRef();
 
     const handleMonth = (e) => {
         e.target.setCustomValidity('');
@@ -28,27 +29,46 @@ function InputExpDate() {
 
     const handleMonthBlur = (e) => {
         const isEmpty = e.target.validity.valueMissing;
-        if(isEmpty)
-            emptyMessageRef.current.style.display = 'block'
+        if(isEmpty){
+            emptyMessageRef.current.style.display = 'block';
+            inputMonthRef.current.style.border = '1px solid #FF5050';
+        }
+            
         else if(month.length < 2){
             invalidMessageRef.current.style.display = 'block';
+            inputMonthRef.current.style.border = '1px solid #FF5050';
             e.target.setCustomValidity(' ');
         }   
     }
 
     const handleYearBlur = (e) => {
         const isEmpty = e.target.validity.valueMissing;
-        if(isEmpty)
-            emptyMessageRef.current.style.display = 'block'
+        if(isEmpty){
+            emptyMessageRef.current.style.display = 'block';
+            inputYearRef.current.style.border = '1px solid #FF5050';
+        }
         else if(year.length < 2){
             invalidMessageRef.current.style.display = 'block';
+            inputYearRef.current.style.border = '1px solid #FF5050';
             e.target.setCustomValidity(' ');
         }   
     }
 
-    const handleInvalid = (e) => {
+    const handleMonthInvalid = (e) => {
         e.target.setCustomValidity(' ');
         const isEmpty = e.target.validity.valueMissing;
+        inputMonthRef.current.style.border = '1px solid #FF5050';
+
+        if(isEmpty)
+            emptyMessageRef.current.style.display = 'block'
+        else 
+            invalidMessageRef.current.style.display = 'block'
+    }
+
+    const handleYearInvalid = (e) => {
+        e.target.setCustomValidity(' ');
+        const isEmpty = e.target.validity.valueMissing;
+        inputYearRef.current.style.border = '1px solid #FF5050';
 
         if(isEmpty)
             emptyMessageRef.current.style.display = 'block'
@@ -58,8 +78,10 @@ function InputExpDate() {
 
 
     useEffect(() => {
-        emptyMessageRef.current.style.display = ''
-        invalidMessageRef.current.style.display = ''
+        emptyMessageRef.current.style.display = '';
+        invalidMessageRef.current.style.display = '';
+        inputYearRef.current.style.border = '';
+        inputMonthRef.current.style.border = '';
     }, [month, year])
 
     return (
@@ -73,7 +95,8 @@ function InputExpDate() {
                 value={month}
                 onChange={handleMonth}       
                 onBlur={handleMonthBlur}
-                onInvalid={handleInvalid}
+                onInvalid={handleMonthInvalid}
+                ref={inputMonthRef}
                 required
                 />
             <input className={styles.input} 
@@ -82,8 +105,8 @@ function InputExpDate() {
                 value={year}
                 onChange={handleYear}
                 onBlur={handleYearBlur}
-                onInvalid={handleInvalid}
-                ref={inputRef}
+                onInvalid={handleYearInvalid}
+                ref={inputYearRef}
                 required
                 />
             <p className={styles.errorMessage} ref={emptyMessageRef}>

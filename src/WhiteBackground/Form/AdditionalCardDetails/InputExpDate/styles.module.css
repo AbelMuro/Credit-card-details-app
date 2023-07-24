@@ -1,6 +1,7 @@
 .container{
     display: grid;
     grid-template-columns: repeat(2, 80px);
+    align-content: start;
     column-gap: 10px;
     row-gap: 9px;
 }
@@ -45,17 +46,6 @@
 
 .input:hover{
     border: 1px solid #21092F;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-input[type=number]{
-    -moz-appearance: textfield;
-    appearance: textfield;
 }
 
 .errorMessage{

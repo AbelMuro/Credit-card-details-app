@@ -47,6 +47,7 @@
 
 
 .creditCardFront{
+    transform: rotate(0deg);
     width: 447px;
     height: 245px;    
     position: absolute;
@@ -105,6 +106,7 @@
 }
 
 .creditCardBack{
+    transform: rotate(0deg);
     width: 447px;
     height: 245px;
     position: absolute;
@@ -129,4 +131,37 @@
     font-size: 0.875rem;
     font-weight: 500;
     letter-spacing: 2px;
+}
+
+@media(max-width: 1160px){
+    .creditCardBack{
+        right: -120px;
+    }
+}
+
+@media(max-width: 1120px){
+    .creditCardFront, .creditCardBack{
+        width: 285px;
+        height: 156.2px;
+    }
+
+    .creditCardFront{
+        transform: rotate(360deg);
+        grid-template-columns: 89px 1fr;
+        padding: 17px 19px;
+        row-gap: 17px;
+        top: 200px;
+    }
+    .brand{
+        width: 54px;
+        margin-bottom: 20px;
+    }
+
+    .cardNumber{
+        font-size: 1.125rem;
+    }
+    .cardOwner, .cardCVC{
+        font-size: 0.5625rem;
+    }
+
 }

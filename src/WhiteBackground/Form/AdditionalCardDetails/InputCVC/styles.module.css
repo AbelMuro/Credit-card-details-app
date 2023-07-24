@@ -2,7 +2,9 @@
     width: 191px;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     gap: 9px;
+    position: relative;
 }
 
 .label{
@@ -43,4 +45,12 @@
 
 .input:hover{
     border: 1px solid #21092F;
+}
+
+.errorMessage{
+    display: none;
+    font-family: var(--font);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #FF5050;
 }
