@@ -1,13 +1,13 @@
 import React from 'react';
 import PurpleBackground from './PurpleBackground';
-import Content from './Content';
+import WhiteBackground from './WhiteBackground';
 import './styles.css';
 
 function App() {
     return(
-        <main>
+        <main className={'container'}>
             <PurpleBackground/>
-            <Content/>
+            <WhiteBackground/>
         </main>
     )
 }

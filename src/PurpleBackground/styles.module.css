@@ -1,11 +1,8 @@
 .container{
-    width: 483px;
-    height: 100vh;
+    width: 30%;
+    height: 110vh;
     background-color: #21092F;
-    position: absolute;
-    z-index: var(--farrthest);
-    top: 0px;
-    left: 0px;
+    position: relative;
 }
 
 .oval:nth-of-type(1){
@@ -48,16 +45,18 @@
     filter: blur(67.95704650878906px);
 }
 
-.creditCard{
+
+.creditCardFront{
     width: 447px;
     height: 245px;    
     position: absolute;
     z-index: var(--closest);
     top: 128px;
-    right: -60px;
+    right: -120px;
     padding: 28px 32px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 145px 1fr;
+    row-gap: 25.5px;
     border-radius: 10px;
     background-image: url('./images/bg-card-front.png');
     background-position: center;
@@ -66,7 +65,9 @@
 }
 
 
-.creditCard_number{
+.cardNumber{
+    grid-column: 1/3;
+    grid-row: 2/3;
     color: #FFF;
     font-family: var(--font);
     font-size: 1.75rem;
@@ -76,7 +77,56 @@
     letter-spacing: 3.422px;
 }
 
+.cardOwner{
+    font-family: var(--font);
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+.cardDate{
+    font-family: var(--font);
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    grid-column: 2/3;
+    grid-row: 3/4;
+    justify-self: flex-end;
+}
+
 .brand{
     height: 47px;
     object-fit: contain;
+    margin-bottom: 39px;
+}
+
+.creditCardBack{
+    width: 447px;
+    height: 245px;
+    position: absolute;
+    top: 420px;
+    right: -200px;
+    background-image: url('./images/bg-card-back.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: var(--font);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.cardCVC{
+    position: absolute;
+    top: 111px;
+    right: 57px;
+    color: white;
+    font-family: var(--font);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 2px;
 }

@@ -1,0 +1,10 @@
+.container{
+    width: 70%;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    gap: 221px;
+    justify-content: center;
+    align-items: center;
+}
+

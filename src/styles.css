@@ -3,6 +3,12 @@
     src: url('./Common/Fonts/SpaceGrotesk-VariableFont_wght.ttf');
 }
 
+.container{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
 :root{
     --font: 'space grotesk';
     --closest: 100;

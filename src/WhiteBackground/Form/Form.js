@@ -5,7 +5,6 @@ import InputCardNumber from './InputCardNumber';
 import AdditionalCardDetails from './AdditionalCardDetails';
 
 
-//now i need to work on the validation of the inputs
 function Form() {
     return(
         <form className={styles.container}>
