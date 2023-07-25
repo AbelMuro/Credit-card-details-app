@@ -91,6 +91,7 @@ function InputExpDate() {
             </label>
             <input className={styles.input} 
                 type='number'
+                name='month'
                 placeholder='MM'     
                 value={month}
                 onChange={handleMonth}       
@@ -101,6 +102,7 @@ function InputExpDate() {
                 />
             <input className={styles.input} 
                 type='number'
+                name='year'
                 placeholder='YY'
                 value={year}
                 onChange={handleYear}

@@ -37,6 +37,7 @@ function InputName() {
                 cardholder name
             </label>
             <input type='text' 
+                name='name'
                 className={styles.input} 
                 placeholder='e.g. Jane Appleseed'
                 value={name}

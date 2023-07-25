@@ -67,6 +67,7 @@ function InputCardNumber() {
             </label>
             <input
                 type='tel' 
+                name='number'
                 className={styles.input} 
                 placeholder='e.g. 1234 5678 9123 0000'
                 value={cardNumber}

@@ -39,6 +39,7 @@ function InputCVC () {
                 CVC
             </label>
             <input type='number' 
+                name='cvc'
                 className={styles.input} 
                 placeholder='e.g. 123'
                 value={cvc}
