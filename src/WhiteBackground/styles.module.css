@@ -8,3 +8,11 @@
     align-items: center;
 }
 
+
+@media(max-width: 870px){
+    .container{
+        width: 100%;
+        align-items: flex-start;
+        padding-top: 91px
+    }
+}

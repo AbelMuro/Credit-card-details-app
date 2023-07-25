@@ -3,55 +3,18 @@
     height: 110vh;
     background-color: #21092F;
     position: relative;
+    background-image: url('./images/bg-main-desktop.png');
+    background-size: contain;
+    background-position: top;
+    background-repeat: no-repeat;
 }
-
-.oval:nth-of-type(1){
-    position: absolute;
-    z-index: var(--farthest);    
-    width: 248px;
-    height: 657px;
-    border-radius: 657px;
-    opacity: 0.2474048376083374;
-    background: #D53AFF;
-    filter: blur(67.95704650878906px);
-    transform: rotate(45deg);
-    top: -160px;
-    left: -120px;
-}
-
-.oval:nth-of-type(2){
-    position: absolute;
-    z-index: var(--far);    
-    top: 0px;
-    width: 248px;
-    height: 657px;
-    border-radius: 657px;
-    opacity: 0.2474048376083374;
-    background: #FF834A;
-    filter: blur(67.95704650878906px);
-    transform: rotate(45deg);
-}
-
-.oval:nth-of-type(3){
-    position: absolute;
-    z-index: var(--close);
-    top: 120px;
-    transform: rotate(45deg);
-    width: 248px;
-    height: 657px;
-    border-radius: 657px;
-    opacity: 0.2474048376083374;
-    background-color: #47A2FF;
-    filter: blur(67.95704650878906px);
-}
-
 
 .creditCardFront{
     transform: rotate(0deg);
     width: 447px;
     height: 245px;    
     position: absolute;
-    z-index: var(--closest);
+    z-index: var(--even-closer);
     top: 128px;
     right: -120px;
     padding: 28px 32px;
@@ -63,6 +26,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    transition: width 0.2s linear, height 0.2s linear, top 0.2s linear, left 0.2s linear, right 0.2s linear, transform 0.6s linear; 
 }
 
 
@@ -111,6 +75,7 @@
     height: 245px;
     border-radius: 10px;
     position: absolute;
+    z-index: var(--closest);
     top: 420px;
     right: -200px;
     background-image: url('./images/bg-card-back.png');
@@ -121,6 +86,7 @@
     font-size: 0.875rem;
     font-weight: 500;
     letter-spacing: 2px;
+    transition: width 0.2s linear, height 0.2s linear, top 0.2s linear, left 0.2s linear, right 0.2s linear, transform 0.4s linear; 
 }
 
 .cardCVC{
@@ -143,19 +109,25 @@
 @media(max-width: 1120px){
     .creditCardFront, .creditCardBack{
         width: 295px;
-        height: 176.20805px;
+        height: 156.20805px;
         border-radius: 6px;
+        transform: rotate(360deg);
+    }
+
+    .creditCardBack{
+        top: 300px;
+        right: -40px;
     }
 
     .creditCardFront{
-        transform: rotate(360deg);
         grid-template-columns: 89px 1fr;
         padding: 17px 19px;
         row-gap: 17px;
-        top: 200px;
+        top: 400px;
+        right: -100px;
     }
     .brand{
-        width: 54px;
+        height: 30px;
         margin-bottom: 20px;
     }
 
@@ -168,4 +140,46 @@
         white-space: nowrap;
     }
 
+    .cardCVC{
+        top: 69.64px;   
+        right: 30px;
+    }
+
+}
+
+@media(max-width: 870px){
+    .container{
+        background-image: url('./images/bg-main-mobile.png');
+        background-position: right;
+        width: 100%;
+        height: 240px;
+        flex-shrink: 0;
+    }
+
+    .creditCardFront{
+        top: 120.5px;
+        left: 0;
+        right: 0;
+        transform: translateX(-30px);
+        margin: auto;
+    }
+
+    .creditCardBack{
+        top: 32px;
+        left: 0;
+        right: 0;
+        transform: translateX(30px);
+        margin: auto;
+    }
+}
+
+@media(max-width: 380px){
+    .creditCardFront{
+        transform: translateX(-10px);
+
+    }
+
+    .creditCardBack{
+        transform: translateX(10px);
+    }
 }

@@ -11,6 +11,7 @@
 
 :root{
     --font: 'space grotesk';
+    --even-closer: 125;
     --closest: 100;
     --close: 75;
     --far: 50;
@@ -40,4 +41,10 @@ input::-webkit-inner-spin-button {
 input[type=number]{
     -moz-appearance: textfield;
     appearance: textfield;
+}
+
+@media(max-width: 870px){
+    .container{
+        flex-direction: column;
+    }
 }
