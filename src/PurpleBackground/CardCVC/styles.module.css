@@ -1,0 +1,19 @@
+.cardCVC{
+    position: absolute;
+    top: 111px;
+    right: 57px;
+    color: white;
+    font-family: var(--font);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+@media(max-width: 1120px) {
+    .cardCVC{
+        font-size: 0.5625rem;
+        white-space: nowrap;
+        top: 69.64px;   
+        right: 30px;        
+    }
+}

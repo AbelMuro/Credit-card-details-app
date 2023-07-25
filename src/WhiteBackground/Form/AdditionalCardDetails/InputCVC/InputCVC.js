@@ -1,8 +1,10 @@
-import React, {useRef, useEffect, useState} from 'react';
+import React, {useRef, useEffect} from 'react';
 import styles from './styles.module.css';
+import {useSelector, useDispatch} from 'react-redux';
 
 function InputCVC () {
-    const [cvc, setCvc] = useState('');
+    const ccCVC = useSelector(state => state.ccCVC);
+    const dispatch = useDispatch();
     const errorMessageRef = useRef();
     const inputRef = useRef();
 
@@ -10,7 +12,7 @@ function InputCVC () {
         const newCvc = e.target.value;
         if(newCvc.length > 3) return;
         e.target.setCustomValidity('');
-        setCvc(newCvc);
+        dispatch({type: 'update cc cvc', ccCVC: newCvc});
     }
 
     const handleBlur = (e) => {
@@ -31,7 +33,7 @@ function InputCVC () {
     useEffect(() => {
         errorMessageRef.current.style.display = '';
         inputRef.current.style.border = '';
-    }, [cvc])
+    }, [ccCVC])
 
     return(
         <fieldset className={styles.container}>
@@ -42,7 +44,7 @@ function InputCVC () {
                 name='cvc'
                 className={styles.input} 
                 placeholder='e.g. 123'
-                value={cvc}
+                value={ccCVC}
                 onChange={handleCvc}
                 onBlur={handleBlur}
                 onInvalid={handleInvalid}

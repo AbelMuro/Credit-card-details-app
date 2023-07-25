@@ -1,0 +1,16 @@
+.cardExp{
+    font-family: var(--font);
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    grid-column: 2/3;
+    grid-row: 3/4;
+    justify-self: flex-end;
+}
+
+@media(max-width: 1120px){
+    .cardExp{
+        font-size: 0.5625rem;
+    }
+}

@@ -1,9 +1,11 @@
-import React, {useState, useRef, useEffect} from 'react';
+import React, {useRef, useEffect} from 'react';
 import styles from './styles.module.css';
+import {useSelector, useDispatch} from 'react-redux'
 
 function InputExpDate() {
-    const [month, setMonth] = useState('') ;
-    const [year, setYear] = useState('');
+    const ccMonth = useSelector(state => state.ccMonth);
+    const ccYear = useSelector(state => state.ccYear);
+    const dispatch = useDispatch();
     const emptyMessageRef = useRef();
     const invalidMessageRef = useRef();
     const inputYearRef = useRef();
@@ -15,7 +17,7 @@ function InputExpDate() {
         const currentMonth = Number(userInput);
         if(currentMonth < 0 || currentMonth > 12 || userInput.length > 2)
             return;
-        setMonth(userInput);
+        dispatch({type: 'update cc month', ccMonth: userInput});
     }
 
     const handleYear = (e) => {
@@ -24,7 +26,7 @@ function InputExpDate() {
         const currentYear = Number(userInput);
         if(currentYear < 0 || currentYear > 99 || userInput.length > 2)
             return;
-        setYear(e.target.value);
+        dispatch({type: 'update cc year', ccYear: userInput});
     }
 
     const handleMonthBlur = (e) => {
@@ -34,7 +36,7 @@ function InputExpDate() {
             inputMonthRef.current.style.border = '1px solid #FF5050';
         }
             
-        else if(month.length < 2){
+        else if(ccMonth.length < 2){
             invalidMessageRef.current.style.display = 'block';
             inputMonthRef.current.style.border = '1px solid #FF5050';
             e.target.setCustomValidity(' ');
@@ -47,7 +49,7 @@ function InputExpDate() {
             emptyMessageRef.current.style.display = 'block';
             inputYearRef.current.style.border = '1px solid #FF5050';
         }
-        else if(year.length < 2){
+        else if(ccYear.length < 2){
             invalidMessageRef.current.style.display = 'block';
             inputYearRef.current.style.border = '1px solid #FF5050';
             e.target.setCustomValidity(' ');
@@ -82,7 +84,7 @@ function InputExpDate() {
         invalidMessageRef.current.style.display = '';
         inputYearRef.current.style.border = '';
         inputMonthRef.current.style.border = '';
-    }, [month, year])
+    }, [ccMonth, ccYear])
 
     return (
         <fieldset className={styles.container}>
@@ -93,7 +95,7 @@ function InputExpDate() {
                 type='number'
                 name='month'
                 placeholder='MM'     
-                value={month}
+                value={ccMonth}
                 onChange={handleMonth}       
                 onBlur={handleMonthBlur}
                 onInvalid={handleMonthInvalid}
@@ -104,7 +106,7 @@ function InputExpDate() {
                 type='number'
                 name='year'
                 placeholder='YY'
-                value={year}
+                value={ccYear}
                 onChange={handleYear}
                 onBlur={handleYearBlur}
                 onInvalid={handleYearInvalid}

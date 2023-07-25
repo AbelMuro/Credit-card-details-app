@@ -1,8 +1,10 @@
 import React, {useRef, useState, useEffect} from 'react';
 import styles from './styles.module.css';
+import {useSelector, useDispatch} from 'react-redux';
 
 function InputCardNumber() {
-    const [cardNumber, setCardNumber] = useState('');
+    const ccNumber = useSelector(state => state.ccNumber);
+    const dispatch = useDispatch();
     const emptyMessageRef = useRef();
     const wrongFormatMessageRef = useRef();
     const inputRef = useRef();
@@ -24,7 +26,7 @@ function InputCardNumber() {
     const handleCardNumber = (e) => {
         e.target.setCustomValidity('');
         const formattedCardNumber = formatCardNumber(e.target.value);
-        setCardNumber(formattedCardNumber);
+        dispatch({type: 'update cc number', ccNumber: formattedCardNumber});
     }
 
     const handleBlur = (e) => {
@@ -57,7 +59,7 @@ function InputCardNumber() {
         emptyMessageRef.current.style.display = '';
         wrongFormatMessageRef.current.style.display = '';
         inputRef.current.style.border = '';
-    }, [cardNumber])
+    }, [ccNumber])
 
 
     return(
@@ -70,7 +72,7 @@ function InputCardNumber() {
                 name='number'
                 className={styles.input} 
                 placeholder='e.g. 1234 5678 9123 0000'
-                value={cardNumber}
+                value={ccNumber}
                 onBlur={handleBlur}
                 onChange={handleCardNumber}
                 onInvalid={handleInvalid}

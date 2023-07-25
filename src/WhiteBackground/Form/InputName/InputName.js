@@ -1,14 +1,16 @@
-import React, {useRef, useState, useEffect} from 'react';
+import React, {useRef, useEffect} from 'react';
 import styles from './styles.module.css';
+import {useSelector, useDispatch} from 'react-redux';
 
 function InputName() {
-    const [name, setName] = useState('');
+    const ccName = useSelector(state => state.ccName);
+    const dispatch = useDispatch();
     const errorMessageRef = useRef();
     const inputRef = useRef();
 
     const handleName = (e) => {
         e.target.setCustomValidity('');
-        setName(e.target.value);
+        dispatch({type: 'update cc name', ccName: e.target.value});
     }
 
     const handleBlur = (e) => {
@@ -29,7 +31,7 @@ function InputName() {
     useEffect(() => {
         errorMessageRef.current.style.display = '';
         inputRef.current.style.border = '';
-    }, [name])
+    }, [ccName])
 
     return(
         <fieldset className={styles.container}>
@@ -40,7 +42,7 @@ function InputName() {
                 name='name'
                 className={styles.input} 
                 placeholder='e.g. Jane Appleseed'
-                value={name}
+                value={ccName}
                 onChange={handleName}
                 onInvalid={handleInvalid}
                 onBlur={handleBlur}

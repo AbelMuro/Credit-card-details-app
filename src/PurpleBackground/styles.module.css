@@ -30,39 +30,6 @@
 }
 
 
-.cardNumber{
-    grid-column: 1/3;
-    grid-row: 2/3;
-    color: #FFF;
-    font-family: var(--font);
-    font-size: 1.75rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    letter-spacing: 3.422px;
-}
-
-.cardOwner{
-    font-family: var(--font);
-    color: white;
-    font-size: 0.875rem;
-    font-weight: 500;
-    letter-spacing: 2px;
-    grid-column: 1/2;
-    grid-row: 3/4;
-}
-
-.cardDate{
-    font-family: var(--font);
-    color: white;
-    font-size: 0.875rem;
-    font-weight: 500;
-    letter-spacing: 2px;
-    grid-column: 2/3;
-    grid-row: 3/4;
-    justify-self: flex-end;
-}
-
 .brand{
     height: 47px;
     object-fit: contain;
@@ -89,16 +56,6 @@
     transition: width 0.2s linear, height 0.2s linear, top 0.2s linear, left 0.2s linear, right 0.2s linear, transform 0.4s linear; 
 }
 
-.cardCVC{
-    position: absolute;
-    top: 111px;
-    right: 57px;
-    color: white;
-    font-family: var(--font);
-    font-size: 0.875rem;
-    font-weight: 500;
-    letter-spacing: 2px;
-}
 
 @media(max-width: 1160px){
     .creditCardBack{
@@ -131,19 +88,6 @@
         margin-bottom: 20px;
     }
 
-    .cardNumber{
-        font-size: 1.125rem;
-        white-space: nowrap;;
-    }
-    .cardOwner, .cardCVC{
-        font-size: 0.5625rem;
-        white-space: nowrap;
-    }
-
-    .cardCVC{
-        top: 69.64px;   
-        right: 30px;
-    }
 
 }
 

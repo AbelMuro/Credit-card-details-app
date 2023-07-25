@@ -1,0 +1,17 @@
+.cardOwner{
+    font-family: var(--font);
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+
+@media(max-width: 1120px){
+    .cardOwner{
+        font-size: 0.5625rem;
+        white-space: nowrap;
+    }
+}

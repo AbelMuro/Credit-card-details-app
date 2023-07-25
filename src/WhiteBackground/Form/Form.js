@@ -5,8 +5,6 @@ import InputCardNumber from './InputCardNumber';
 import AdditionalCardDetails from './AdditionalCardDetails';
 import FormSubmitted from './FormSubmitted';
 
-
-//this is where i left off, i will need to use a dispatch function for every input below
 function Form() {
     const [submitted, setSubmitted] = useState(false);
 

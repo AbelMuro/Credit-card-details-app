@@ -1,26 +1,23 @@
 import React from 'react';
 import styles from './styles.module.css';
 import brand from './images/credit-card-brand.png';
+import CardNumber from './CardNumber';
+import CardOwner from './CardOwner'
+import CardExp from './CardExp';
+import CardCVC from './CardCVC';
 
 function PurpleBackground() {
+
     return(
         <div className={styles.container}>
             <div className={styles.creditCardFront}>
                 <img className={styles.brand} src={brand}/>
-                <p className={styles.cardNumber}>
-                    0000 0000 0000 0000
-                </p>
-                <p className={styles.cardOwner}>
-                    JANE APPLESEED
-                </p>
-                <p className={styles.cardDate}>
-                    00/00
-                </p>
+                <CardNumber/>
+                <CardOwner/>
+                <CardExp/>
             </div>
             <div className={styles.creditCardBack}>
-                <p className={styles.cardCVC}>
-                    000
-                </p>
+                <CardCVC/>
             </div>
         </div>
     )
