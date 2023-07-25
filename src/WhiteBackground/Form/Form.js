@@ -13,7 +13,7 @@ function Form() {
         setSubmitted(true);
     }
 
-    return submitted ? <FormSubmitted/> :
+    return submitted ? <FormSubmitted setSubmitted={setSubmitted}/> :
         <form className={styles.container} onSubmit={handleSubmit}>
             <InputName/>
             <InputCardNumber/>
