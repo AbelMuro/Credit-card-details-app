@@ -35,12 +35,14 @@ function InputCVC () {
         inputRef.current.style.border = '';
     }, [ccCVC])
 
+
     return(
         <fieldset className={styles.container}>
             <label className={styles.label}>
                 CVC
             </label>
-            <input type='number' 
+            <input 
+                type='number' 
                 name='cvc'
                 className={styles.input} 
                 placeholder='e.g. 123'

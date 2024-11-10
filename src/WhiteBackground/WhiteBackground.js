@@ -11,6 +11,7 @@ const options = {
 }
 
 function WhiteBackground() {
+    console.log(process.env.secretKey);
     return(
         <Elements stripe={stripePromise} options={options}>
             <div className={styles.container}>

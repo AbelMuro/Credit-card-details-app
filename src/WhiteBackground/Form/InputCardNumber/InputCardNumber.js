@@ -1,7 +1,6 @@
-import React, {useRef, useState, useEffect} from 'react';
+import React, {useRef, useEffect} from 'react';
 import styles from './styles.module.css';
 import {useSelector, useDispatch} from 'react-redux';
-import {CardNumberElement } from '@stripe/react-stripe-js'
 
 function InputCardNumber() {
     const ccNumber = useSelector(state => state.ccNumber);
@@ -59,36 +58,17 @@ function InputCardNumber() {
     useEffect(() => {
         emptyMessageRef.current.style.display = '';
         wrongFormatMessageRef.current.style.display = '';
-       // inputRef.current.style.border = '';
+       inputRef.current.style.border = '';
     }, [ccNumber])
+
+    
 
     return(
         <fieldset className={styles.container}>
             <label className={styles.label}> 
                 Card Number
             </label>
-            <div id='card-number' className={styles.input} >
-                <CardNumberElement                          //this is where i left off, i will need to find a way to get the error state of this component
-                    options={{
-                        style: {
-                            base: { 
-                                fontSize: '18px', 
-                                color: '#21092F', 
-                                fontFamily: 'SpaceGrotesk, Arial, sans-serif', 
-                                fontWeight: "500",
-                                '::placeholder': { 
-                                    color: '#21092f40', 
-                                    fontFamily: 'SpaceGrotesk, Arial, sans-serif',
-                                },
-                            }
-                    },
-                    placeholder: '1234 5678 9123 0000'
-                
-                }}
-                />
-            </div>
-
-            {/*<input
+            <input
                 type='tel' 
                 name='ccNumber'
                 className={styles.input} 
@@ -101,7 +81,7 @@ function InputCardNumber() {
                 maxLength={19} 
                 autoComplete="cc-number"
                 ref={inputRef}
-                required/> */}
+                required/>
             <div className={styles.errorMessage} ref={emptyMessageRef}>
                 Can't be blank
             </div>

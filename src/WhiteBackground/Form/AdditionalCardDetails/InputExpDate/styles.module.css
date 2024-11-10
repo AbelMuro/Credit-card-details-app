@@ -8,7 +8,6 @@
 
 .label{
     color: #21092F;
-    font-feature-settings: 'clig' off, 'liga' off;
     font-family: var(--font);
     font-size: 0.75rem;
     font-style: normal;
@@ -20,6 +19,10 @@
 }
 
 .input{
+    display: grid;
+    grid-template-columns: 100%;
+    justify-content: center;
+    align-items: center;
     width: 80px;
     height: 45px;
     padding: 0px 16px;

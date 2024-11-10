@@ -91,6 +91,7 @@ function InputExpDate() {
             <label className={styles.label}>
                 {'Exp. Date (MM/YY)'}
             </label>
+
             <input className={styles.input} 
                 type='number'
                 name='month'
