@@ -10,14 +10,12 @@ function Form() {
     const [submitted, setSubmitted] = useState(false);
     const stripe = useStripe();
     const elements = useElements();
-    const [numberElement, setNumberElement] = useState();
-    const [cvcElement, setCvcElement] = useState();
-    const [cardExp, setCardExp] = useState();
     
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        //const cardElement = elements.create('card');
+        return;
+        //need to get the stripe elements here
         const {error, paymentMethod} = await stripe.createPaymentMethod({
             type: 'card',
         })
