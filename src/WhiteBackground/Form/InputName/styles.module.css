@@ -33,7 +33,7 @@
 }
 
 .input::placeholder{
-    color: rgba(33, 9, 47, 0.25);
+    color: #21092f40;
 }
 
 .input:focus{

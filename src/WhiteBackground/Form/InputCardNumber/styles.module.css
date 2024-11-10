@@ -21,10 +21,13 @@
     height: 45px;
     border-radius: 8px;
     padding: 0px 16px; 
+    display: grid;
+    grid-template-columns: 100%;
+    justify-content: center;
+    align-items: center;
     background-color: white;
-    border: 1px solid  #DFDEE0;
+    border: 1px solid #DFDEE0;
     color: #21092F;
-    font-feature-settings: 'clig' off, 'liga' off;
     font-family: var(--font);
     font-size: 1.125rem;
     font-style: normal;
