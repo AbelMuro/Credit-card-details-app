@@ -4,7 +4,7 @@ import InputName from './InputName'
 import InputCardNumber from './InputCardNumber';
 import AdditionalCardDetails from './AdditionalCardDetails';
 import FormSubmitted from './FormSubmitted';
-import { CardElement, useStripe, useElements} from '@stripe/react-stripe-js'
+import {useStripe, useElements, CardNumberElement} from '@stripe/react-stripe-js'
 
 function Form() {
     const [submitted, setSubmitted] = useState(false);
@@ -14,8 +14,9 @@ function Form() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        const cardNumber = elements.getElement(CardNumberElement)       //this is how you get a reference to the stripe elements in react
+        console.log(cardNumber);
         return;
-        //need to get the stripe elements here
         const {error, paymentMethod} = await stripe.createPaymentMethod({
             type: 'card',
         })
