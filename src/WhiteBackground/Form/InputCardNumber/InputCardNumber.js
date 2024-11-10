@@ -68,7 +68,7 @@ function InputCardNumber() {
                 Card Number
             </label>
             <div id='card-number' className={styles.input} >
-                <CardNumberElement
+                <CardNumberElement                          //this is where i left off, i will need to find a way to get the error state of this component
                     options={{
                         style: {
                             base: { 
