@@ -1,11 +1,9 @@
-import React, {useState, useEffect} from 'react';
-import {useSelector} from 'react-redux';
+import React, {useState} from 'react';
 import styles from './styles.module.css';
 import InputName from './InputName'
 import InputCardNumber from './InputCardNumber';
 import AdditionalCardDetails from './AdditionalCardDetails';
 import FormSubmitted from './FormSubmitted';
-import {useStripe, useElements, CardNumberElement, CardCvcElement, CardExpiryElement} from '@stripe/react-stripe-js'
 
 function Form() {
     const [submitted, setSubmitted] = useState(false);
@@ -19,9 +17,9 @@ function Form() {
     return submitted ? <FormSubmitted setSubmitted={setSubmitted}/> :
             <form className={styles.container} onSubmit={handleSubmit} id='card'>
                 <InputName/>
-                <InputCardNumber/>
-                <AdditionalCardDetails/>
-                <input type='submit' value='Confirm' className={styles.confirm}/>
+                <InputCardNumber />
+                <AdditionalCardDetails />
+                <input type='submit' value='Confirm' className={styles.confirm} />
             </form>         
 }
 

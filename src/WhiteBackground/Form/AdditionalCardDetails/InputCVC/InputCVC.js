@@ -41,8 +41,7 @@ function InputCVC () {
             <label className={styles.label}>
                 CVC
             </label>
-            <input 
-                type='number' 
+            <input type='number' 
                 name='cvc'
                 className={styles.input} 
                 placeholder='e.g. 123'
@@ -51,7 +50,7 @@ function InputCVC () {
                 onBlur={handleBlur}
                 onInvalid={handleInvalid}
                 ref={inputRef}
-                required/>
+                required/> 
             <div className={styles.errorMessage} ref={errorMessageRef}>
                 Can't be blank
             </div>  

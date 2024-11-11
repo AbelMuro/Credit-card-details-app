@@ -61,7 +61,6 @@ function InputCardNumber() {
        inputRef.current.style.border = '';
     }, [ccNumber])
 
-    
 
     return(
         <fieldset className={styles.container}>
@@ -81,7 +80,7 @@ function InputCardNumber() {
                 maxLength={19} 
                 autoComplete="cc-number"
                 ref={inputRef}
-                required/>
+                required/> 
             <div className={styles.errorMessage} ref={emptyMessageRef}>
                 Can't be blank
             </div>
